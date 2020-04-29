@@ -93,12 +93,12 @@ void	ft_check_space(t_env *e)
 
 	i = 1;
 	j = 0;
-	while (i < e->raycasting.y - 1)
+	while (i < e->raycasting.y - 2)
 	{
 		while (e->map.tab_map[i][j])
 		{
-			if (e->map.tab_map[i][j] == 'X' && (e->map.tab_map[i][j - 1] == '0'
-			|| e->map.tab_map[i][j + 1] == '0' ||
+			if (e->map.tab_map[i][j] == 'X' && (( j != 0 && e->map.tab_map[i][j - 1] == '0')
+			|| (j != e->raycasting.x && e->map.tab_map[i][j + 1] == '0') ||
 			e->map.tab_map[i + 1][j] == '0' || e->map.tab_map[i - 1][j] == '0'))
 			{
 				ft_putstr("Error map\nOnly 1 on the edges of your map");
