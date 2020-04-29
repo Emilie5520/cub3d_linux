@@ -1,4 +1,4 @@
-R 7000 5000
+R 700 500
 NO ./textures/wall_north.xpm
 SO ./textures/wall_south.xpm
 WE ./textures/wall_west.xpm

@@ -50,16 +50,12 @@ void	ft_mv_up(t_env *e)
 
 int		ft_deplacement(t_env *e)
 {
-	double tmp;
-
-	tmp = e->map.pos_n_x + e->map.pos_n_y + e->map.plan_x + e->map.plan_y;
 	e->mvt.vit_rot = 0.020;
 	ft_mv_up(e);
 	ft_deplacement_down(e);
 	ft_deplacement_left(e);
 	ft_deplacement_right(e);
-	if (tmp != e->map.pos_n_x + e->map.pos_n_y + e->map.plan_x + e->map.plan_y)
-		ft_init_image(e);
+	ft_init_image(e);
 	return (0);
 }
 
