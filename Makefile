@@ -1,6 +1,6 @@
 
 
-NAME = Cub3D
+NAME = cub3D
 
 CC = gcc 
 
@@ -24,7 +24,7 @@ OBJ = $(SRC:%.c=%.o)
 
 IFLAGS = ./includes/
 
-CFLAGS = -Wall -Wextra -Werror -lm -lbsd -lX11 -lXext -g
+CFLAGS = -Wall -Wextra -Werror -lm -lbsd -lX11 -lXext
 
 DIRMLX = ./mlx/
 
