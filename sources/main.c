@@ -103,7 +103,6 @@ void	ft_push_bmp(t_env *e)
 	}
 	ft_textures(e);
 	ft_init_sprite(e);
-
 	e->mlx.new_image = mlx_new_image(e->mlx.ptr, e->axes.axe_x, e->axes.axe_y);
 	e->mlx.get_data = (int *)mlx_get_data_addr(e->mlx.new_image,
 			&e->mlx.bits_per_pixel, &e->mlx.size_line, &e->mlx.endian);
