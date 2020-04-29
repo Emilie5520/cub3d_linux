@@ -90,12 +90,14 @@ void	ft_check_color(t_env *e, char *line, int i)
 		j--;
 	while (ft_isdigit(line[i]))
 		i++;
+	ft_space(line, &i);
 	j += line[i] == ',' ? 1 : 0;
 	j += ft_isdigit(line[++i]) ? 1 : 0;
 	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
 		j--;
 	while (ft_isdigit(line[i]))
 		i++;
+	ft_space(line, &i);
 	j += line[i] == ',' ? 1 : 0;
 	j += ft_isdigit(line[++i]) ? 1 : 0;
 	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)

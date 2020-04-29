@@ -31,22 +31,22 @@ int		ft_is_orientation(t_env *e, int i, int j)
 
 void	ft_orientation_perso(t_env *e)
 {
-	if (e->orientation.orientation_perso == 'W')
+	if (e->orientation.orientation_perso == 'N')
 	{
 		e->orientation.dir_x = 0;
 		e->orientation.dir_y = -1;
 	}
-	if (e->orientation.orientation_perso == 'E')
+	if (e->orientation.orientation_perso == 'S')
 	{
 		e->orientation.dir_x = 0;
 		e->orientation.dir_y = 1;
 	}
-	if (e->orientation.orientation_perso == 'S')
+	if (e->orientation.orientation_perso == 'W')
 	{
 		e->orientation.dir_x = -1;
 		e->orientation.dir_y = 0;
 	}
-	if (e->orientation.orientation_perso == 'N')
+	if (e->orientation.orientation_perso == 'E')
 	{
 		e->orientation.dir_x = 1;
 		e->orientation.dir_y = 0;

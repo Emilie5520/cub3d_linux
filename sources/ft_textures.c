@@ -72,14 +72,14 @@ t_textures		ft_texture_wall(t_env *e)
 {
 	if (e->raycasting.side == 0 && e->map.ray_dir_x > 0)
 	{
-		return (e->texture_north);
+		return (e->texture_east);
 	}
 	else if (e->raycasting.side == 0 && e->map.ray_dir_x < 0)
-		return (e->texture_south);
-	else if (e->raycasting.side == 1 && e->map.ray_dir_y > 0)
-		return (e->texture_east);
-	else
 		return (e->texture_west);
+	else if (e->raycasting.side == 1 && e->map.ray_dir_y > 0)
+		return (e->texture_south);
+	else
+		return (e->texture_north);
 }
 
 void			ft_put_textures(t_env *e, int x)

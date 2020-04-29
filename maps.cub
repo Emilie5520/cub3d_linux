@@ -1,7 +1,7 @@
 R 700 500
-NO ./textures/wall_north.xpm
+NO ./textures/unnamed.xpm
 SO ./textures/wall_south.xpm
-WE ./textures/wall_west.xpm
+WE ./textures/wall_north.xpm
 S ./textures/sprite_test.xpm
 EA ./textures/unnamed.xpm
 
