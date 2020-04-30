@@ -123,25 +123,24 @@ int		main(int argc, char **argv)
 	int		len;
 
 	ft_bzero(&e, sizeof(t_env));
-	if (argc < 2 || argc > 3)
+	if (argv[2] && !ft_strncmp(argv[2], "--save", 6))
+	{
+		ft_read_map(argv, &e);
+		ft_push_bmp(&e);
+	}
+	if (argc < 2 || argc > 2)
 	{
 		ft_putstr("Error\nNumbers of argc incorrect");
 		ft_exit(&e);
 	}
 	len = (ft_strlen(argv[1]) - 4);
 	ft_read_map(argv, &e);
-	if (argv[2] && !ft_strncmp(argv[2], "--save", 6))
-		ft_push_bmp(&e);
 	if (!argv[1] || (ft_strncmp(argv[1] + len, ".cub", 4)))
 	{
 		ft_putstr("Error\nNo map or no file .cub");
 		ft_exit(&e);
 	}
-	if (!(e.sprite = (t_sprite*)ft_calloc(sizeof(t_sprite), e.map.nbr_sprite)))
-	{
-		ft_putstr("Error\nMalloc sprite");
-		ft_exit(&e);
-	}
+	ft_check_malloc(&e);
 	ft_open_window(&e);
 	return (0);
 }

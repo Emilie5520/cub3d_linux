@@ -90,14 +90,12 @@ void	ft_check_color(t_env *e, char *line, int i)
 		j--;
 	while (ft_isdigit(line[i]))
 		i++;
-	ft_space(line, &i);
 	j += line[i] == ',' ? 1 : 0;
 	j += ft_isdigit(line[++i]) ? 1 : 0;
 	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
 		j--;
 	while (ft_isdigit(line[i]))
 		i++;
-	ft_space(line, &i);
 	j += line[i] == ',' ? 1 : 0;
 	j += ft_isdigit(line[++i]) ? 1 : 0;
 	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
@@ -107,7 +105,7 @@ void	ft_check_color(t_env *e, char *line, int i)
 	ft_space(line, &i);
 	j -= line[i] != '\0' ? 1 : 0;
 	if (j != 5)
-		ft_putstr("Error\nWrong color");
+		printf("Error\nWrong color");
 	if (j != 5)
 		ft_exit(e);
 }

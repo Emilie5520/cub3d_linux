@@ -252,5 +252,15 @@ void				ft_check_wall_again(t_env *e);
 int					is_charset(char *charset, char c);
 void				ft_check_space(t_env *e);
 void				ft_check_resolution_next(t_env *e);
+void				ft_parsing_line_no(t_env *e, char *line, int i);
+void				ft_parsing_line_next(t_env *e, char *line, int i);
+void				ft_parsing_line_so(t_env *e, char *line, int i);
+void				ft_parsing_line_we(t_env *e, char *line, int i);
+void				ft_parsing_line_f(t_env *e, char *line, int i);
+void				ft_parsing_line_s(t_env *e, char *line, int i);
+void				ft_parsing_line_again(t_env *e, char *line, int i);
+char				*ft_delete_space_next(char *str);
+void    			ft_check_malloc(t_env *e);
+int					ft_exit(t_env *e);
 
 #endif

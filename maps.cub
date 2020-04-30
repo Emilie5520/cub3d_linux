@@ -4,8 +4,8 @@ SO ./textures/wall_south.xpm
 WE ./textures/wall_north.xpm
 S ./textures/sprite_test.xpm
 EA ./textures/unnamed.xpm
-
 F 255,255,255
+
 C 0,0,0
 
 111111111     111111111                     111111 1111111                  

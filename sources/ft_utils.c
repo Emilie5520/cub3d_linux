@@ -23,7 +23,7 @@ char	*ft_recup_root(char *line, t_env *e)
 		ft_putstr("Error\n");
 		ft_exit(e);
 	}
-	if (!(line2 = ft_strdup(tab[1])))
+	if (!(line2 = ft_strdup(tab[1])) && line2[i] != '.' && line2[i + 1] != '/')
 	{
 		ft_putstr("Error\n");
 		ft_exit(e);
