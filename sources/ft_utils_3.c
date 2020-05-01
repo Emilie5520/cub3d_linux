@@ -62,3 +62,22 @@ void	ft_check_malloc(t_env *e)
 		ft_exit(e);
 	}
 }
+
+int		ft_key_up(int keycode, t_env *e)
+{
+	if (keycode == 122)
+		e->mvt.up = 0;
+	if (keycode == 115)
+		e->mvt.down = 0;
+	if (keycode == 100)
+		e->mvt.right = 0;
+	if (keycode == 113)
+		e->mvt.left = 0;
+	if (keycode == 65363)
+		e->mvt.rot_right = 0;
+	if (keycode == 65361)
+		e->mvt.rot_left = 0;
+	if (keycode == 65307)
+		ft_exit(e);
+	return (0);
+}

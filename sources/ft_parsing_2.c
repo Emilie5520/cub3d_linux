@@ -18,7 +18,7 @@ void	ft_parsing_line_s(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.s == 0)
 		{
-			e->root_textures.sprite = ft_recup_root(line, e);
+			e->root_textures.sprite = ft_recup_root(line, e, i);
 			e->identifiants.s = 1;
 		}
 		else
@@ -36,7 +36,7 @@ void	ft_parsing_line_f(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.f == 0)
 		{
-			e->colors.color_sol = ft_recup_color(line, e);
+			e->colors.color_sol = ft_recup_color(line, e, i);
 			e->identifiants.f = 1;
 		}
 		else
@@ -55,7 +55,7 @@ void	ft_parsing_line_no(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.no == 0)
 		{
-			e->root_textures.north = ft_recup_root(line, e);
+			e->root_textures.north = ft_recup_root(line, e, i);
 			e->identifiants.no = 1;
 		}
 		else
@@ -74,7 +74,7 @@ void	ft_parsing_line_so(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.so == 0)
 		{
-			e->root_textures.south = ft_recup_root(line, e);
+			e->root_textures.south = ft_recup_root(line, e, i);
 			e->identifiants.so = 1;
 		}
 		else
@@ -93,7 +93,7 @@ void	ft_parsing_line_we(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.we == 0)
 		{
-			e->root_textures.west = ft_recup_root(line, e);
+			e->root_textures.west = ft_recup_root(line, e, i);
 			e->identifiants.we = 1;
 		}
 		else

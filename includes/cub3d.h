@@ -206,8 +206,8 @@ typedef struct		s_env
 void				ft_parsing_line(t_env *e, char *line);
 int					ft_read_map(char **argv, t_env *e);
 void				ft_recup_axes(t_env *e, char *line);
-char				*ft_recup_root(char *line, t_env *e);
-int					ft_recup_color(char *line, t_env *e);
+char				*ft_recup_root(char *line, t_env *e, int i);
+int					ft_recup_color(char *line, t_env *e, int i);
 void				ft_recup_map(char *line, t_env *e);
 void				ft_open_window(t_env *e);
 void				ft_recup_map_2(t_env *e);
@@ -260,7 +260,7 @@ void				ft_parsing_line_f(t_env *e, char *line, int i);
 void				ft_parsing_line_s(t_env *e, char *line, int i);
 void				ft_parsing_line_again(t_env *e, char *line, int i);
 char				*ft_delete_space_next(char *str);
-void    			ft_check_malloc(t_env *e);
+void				ft_check_malloc(t_env *e);
 int					ft_exit(t_env *e);
 
 #endif

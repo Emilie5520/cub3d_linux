@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edouvier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 17:40:15 by edouvier          #+#    #+#             */
-/*   Updated: 2020/02/26 13:00:17 by edouvier         ###   ########.fr       */
+/*   Updated: 2020/04/30 18:21:25 by edouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_parsing_line_again_next(t_env *e, char *line, int i)
 	else if (line && (line[i] != '1' || line[i] != '0' || line[i] != '\0')
 			&& e->identifiants.m == 1)
 	{
-		ft_putstr("Error\nmap");
+		ft_putstr("Error\nmap incorrect");
 		ft_exit(e);
 	}
 }
@@ -33,7 +33,7 @@ void	ft_parsing_line_again(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.c == 0)
 		{
-			e->colors.color_plafond = ft_recup_color(line, e);
+			e->colors.color_plafond = ft_recup_color(line, e, i);
 			e->identifiants.c = 1;
 		}
 		else
@@ -52,7 +52,7 @@ void	ft_parsing_line_next(t_env *e, char *line, int i)
 	{
 		if (e->identifiants.ea == 0)
 		{
-			e->root_textures.east = ft_recup_root(line, e);
+			e->root_textures.east = ft_recup_root(line, e, i);
 			e->identifiants.ea = 1;
 		}
 		else
@@ -61,7 +61,7 @@ void	ft_parsing_line_next(t_env *e, char *line, int i)
 			ft_exit(e);
 		}
 	}
-	ft_parsing_line_S(e, line, i);
+	ft_parsing_line_s(e, line, i);
 }
 
 void	ft_parsing_line(t_env *e, char *line)
@@ -83,7 +83,7 @@ void	ft_parsing_line(t_env *e, char *line)
 			ft_exit(e);
 		}
 	}
-	ft_parsing_line_NO(e, line, i);
+	ft_parsing_line_no(e, line, i);
 }
 
 int		ft_read_map(char **argv, t_env *e)
@@ -95,14 +95,14 @@ int		ft_read_map(char **argv, t_env *e)
 	ret = 1;
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
 	{
-		ft_putstr("Error\n");
+		ft_putstr("Error\nfunction read");
 		ft_exit(e);
 	}
 	while ((ret = get_next_line(fd, &line)) == 1)
 	{
 		if (ret == -1)
 		{
-			ft_putstr("Error\n");
+			ft_putstr("Error\nRet == -1");
 			ft_exit(e);
 		}
 		ft_parsing_line(e, line);

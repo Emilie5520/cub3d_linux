@@ -81,6 +81,27 @@ void	ft_check_resolution_next(t_env *e)
 	}
 }
 
+void	ft_check_color_next(t_env *e, char *line, int i, int j)
+{
+	ft_space(line, &i);
+	j += line[i] == ',' ? 1 : 0;
+	i++;
+	ft_space(line, &i);
+	j += ft_isdigit(line[i]) ? 1 : 0;
+	ft_space(line, &i);
+	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
+		j--;
+	while (ft_isdigit(line[i]))
+		i++;
+	ft_space(line, &i);
+	j -= line[i] != '\0' ? 1 : 0;
+	if (j != 5)
+	{
+		ft_putstr("Error\nWrong color");
+		ft_exit(e);
+	}
+}
+
 void	ft_check_color(t_env *e, char *line, int i)
 {
 	int	j;
@@ -90,22 +111,15 @@ void	ft_check_color(t_env *e, char *line, int i)
 		j--;
 	while (ft_isdigit(line[i]))
 		i++;
-	j += line[i] == ',' ? 1 : 0;
-	j += ft_isdigit(line[++i]) ? 1 : 0;
-	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
-		j--;
-	while (ft_isdigit(line[i]))
-		i++;
-	j += line[i] == ',' ? 1 : 0;
-	j += ft_isdigit(line[++i]) ? 1 : 0;
-	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
-		j--;
-	while (ft_isdigit(line[i]))
-		i++;
 	ft_space(line, &i);
-	j -= line[i] != '\0' ? 1 : 0;
-	if (j != 5)
-		printf("Error\nWrong color");
-	if (j != 5)
-		ft_exit(e);
+	j += line[i] == ',' ? 1 : 0;
+	i++;
+	ft_space(line, &i);
+	j += ft_isdigit(line[i]) ? 1 : 0;
+	ft_space(line, &i);
+	if (ft_atoi(&line[i]) < 0 || ft_atoi(&line[i]) > 255)
+		j--;
+	while (ft_isdigit(line[i]))
+		i++;
+	ft_check_color_next(e, line, i, j);
 }

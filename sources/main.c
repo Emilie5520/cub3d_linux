@@ -123,7 +123,7 @@ int		main(int argc, char **argv)
 	int		len;
 
 	ft_bzero(&e, sizeof(t_env));
-	if (argv[2] && !ft_strncmp(argv[2], "--save", 6))
+	if (argv[2] && !ft_strncmp(argv[2], "--save", 6) && argc < 4)
 	{
 		ft_read_map(argv, &e);
 		ft_push_bmp(&e);
