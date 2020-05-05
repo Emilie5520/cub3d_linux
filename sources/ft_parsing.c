@@ -70,6 +70,7 @@ void	ft_parsing_line(t_env *e, char *line)
 
 	i = 0;
 	ft_space(line, &i);
+	ft_parsing_line_check(e, line);
 	if (line[i] == 'R' && line[i + 1] == ' ' && e->identifiants.m == 0)
 	{
 		if (e->identifiants.r == 0)

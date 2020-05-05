@@ -33,17 +33,17 @@ void		ft_deplacement_left(t_env *e)
 {
 	if (e->mvt.left == 1)
 	{
-		if ((e->map.tab_map[(int)(e->map.pos_n_y - e->map.plan_y * 0.10)]
+		if ((e->map.tab_map[(int)(e->map.pos_n_y - e->map.plan_y * 0.03)]
 				[(int)(e->map.pos_n_x)] != '1') &&
 				(e->map.tab_map[(int)(e->map.pos_n_y -
-				e->map.plan_y * 0.10)][(int)(e->map.pos_n_x)] != '2'))
-			e->map.pos_n_y -= e->map.plan_y * 0.10;
+				e->map.plan_y * 0.03)][(int)(e->map.pos_n_x)] != '2'))
+			e->map.pos_n_y -= e->map.plan_y * 0.03;
 		if ((e->map.tab_map[(int)(e->map.pos_n_y)]
-					[(int)(e->map.pos_n_x - e->map.plan_x * 0.10)]
+					[(int)(e->map.pos_n_x - e->map.plan_x * 0.03)]
 					!= '1') && (e->map.tab_map[(int)(e->map.pos_n_y)]
 						[(int)(e->map.pos_n_x
-							- e->map.plan_x * 0.10)] != '2'))
-			e->map.pos_n_x -= e->map.plan_x * 0.10;
+							- e->map.plan_x * 0.03)] != '2'))
+			e->map.pos_n_x -= e->map.plan_x * 0.03;
 	}
 	ft_deplacement_left_next(e);
 }
@@ -52,16 +52,16 @@ void		ft_deplacement_right_next(t_env *e)
 {
 	if (e->mvt.right == 1)
 	{
-		if ((e->map.tab_map[(int)(e->map.pos_n_y)][(int)(e->map.plan_x * 0.10 +
+		if ((e->map.tab_map[(int)(e->map.pos_n_y)][(int)(e->map.plan_x * 0.03 +
 					e->map.pos_n_x)] != '1') &&
-		((e->map.tab_map[(int)(e->map.pos_n_y)][(int)(e->map.plan_x * 0.10 +
+		((e->map.tab_map[(int)(e->map.pos_n_y)][(int)(e->map.plan_x * 0.03 +
 					e->map.pos_n_x)] != '2')))
-			e->map.pos_n_x += e->map.plan_x * 0.10;
-		if ((e->map.tab_map[(int)(e->map.pos_n_y + e->map.plan_y * 0.10)]
+			e->map.pos_n_x += e->map.plan_x * 0.03;
+		if ((e->map.tab_map[(int)(e->map.pos_n_y + e->map.plan_y * 0.03)]
 				[(int)(e->map.pos_n_x)] != '1') &&
-				((e->map.tab_map[(int)(e->map.pos_n_y + e->map.plan_y * 0.10)]
+				((e->map.tab_map[(int)(e->map.pos_n_y + e->map.plan_y * 0.03)]
 					[(int)(e->map.pos_n_x)] != '2')))
-			e->map.pos_n_y += e->map.plan_y * 0.10;
+			e->map.pos_n_y += e->map.plan_y * 0.03;
 	}
 }
 
@@ -87,15 +87,15 @@ void		ft_deplacement_down(t_env *e)
 {
 	if (e->mvt.down == 1)
 	{
-		if ((e->map.tab_map[(int)(e->map.pos_n_y - e->orientation.dir_y * 0.10)]
+		if ((e->map.tab_map[(int)(e->map.pos_n_y - e->orientation.dir_y * 0.03)]
 				[(int)(e->map.pos_n_x)] != '1')
-		&& (e->map.tab_map[(int)(e->map.pos_n_y - e->orientation.dir_y * 0.10)]
+		&& (e->map.tab_map[(int)(e->map.pos_n_y - e->orientation.dir_y * 0.03)]
 				[(int)(e->map.pos_n_x)] != '2'))
-			e->map.pos_n_y -= e->orientation.dir_y * 0.10;
+			e->map.pos_n_y -= e->orientation.dir_y * 0.03;
 		if ((e->map.tab_map[(int)(e->map.pos_n_y)]
-				[(int)(e->map.pos_n_x - e->orientation.dir_x * 0.10)] != '1')
+				[(int)(e->map.pos_n_x - e->orientation.dir_x * 0.03)] != '1')
 		&& (e->map.tab_map[(int)(e->map.pos_n_y)]
-				[(int)(e->map.pos_n_x - e->orientation.dir_x * 0.10)] != '2'))
-			e->map.pos_n_x -= e->orientation.dir_x * 0.10;
+				[(int)(e->map.pos_n_x - e->orientation.dir_x * 0.03)] != '2'))
+			e->map.pos_n_x -= e->orientation.dir_x * 0.03;
 	}
 }

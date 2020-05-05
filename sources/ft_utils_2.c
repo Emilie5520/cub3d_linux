@@ -36,15 +36,15 @@ void	ft_mv_up(t_env *e)
 	if (e->mvt.up == 1)
 	{
 		if ((e->map.tab_map[(int)(e->map.pos_n_y)]
-				[(int)(e->map.pos_n_x + e->orientation.dir_x * 0.10)] != '1')
+				[(int)(e->map.pos_n_x + e->orientation.dir_x * 0.03)] != '1')
 		&& (e->map.tab_map[(int)(e->map.pos_n_y)]
-				[(int)(e->map.pos_n_x + e->orientation.dir_x * 0.10)] != '2'))
-			e->map.pos_n_x += e->orientation.dir_x * 0.10;
-		if ((e->map.tab_map[(int)(e->map.pos_n_y + e->orientation.dir_y * 0.10)]
+				[(int)(e->map.pos_n_x + e->orientation.dir_x * 0.03)] != '2'))
+			e->map.pos_n_x += e->orientation.dir_x * 0.03;
+		if ((e->map.tab_map[(int)(e->map.pos_n_y + e->orientation.dir_y * 0.03)]
 				[(int)(e->map.pos_n_x)] != '1')
-		&& (e->map.tab_map[(int)(e->map.pos_n_y + e->orientation.dir_y * 0.10)]
+		&& (e->map.tab_map[(int)(e->map.pos_n_y + e->orientation.dir_y * 0.03)]
 				[(int)(e->map.pos_n_x)] != '2'))
-			e->map.pos_n_y += e->orientation.dir_y * 0.10;
+			e->map.pos_n_y += e->orientation.dir_y * 0.03;
 	}
 }
 
@@ -65,6 +65,7 @@ int		ft_exit_before(t_env *e)
 		free(e->sprite);
 	if (e->map.buff)
 		free(e->map.buff);
+	ft_exit_free(e);
 	exit(0);
 	return (0);
 }

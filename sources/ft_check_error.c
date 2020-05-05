@@ -77,7 +77,7 @@ void	ft_check_resolution_next(t_env *e)
 	if (e->axes.axe_x <= 0 || e->axes.axe_y <= 0)
 	{
 		ft_putstr("Error\nResolution <= 0");
-		ft_exit(e);
+		ft_exit_before(e);
 	}
 }
 

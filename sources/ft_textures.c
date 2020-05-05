@@ -100,12 +100,13 @@ void			ft_put_textures(t_env *e, int x)
 	wall_x -= floor(wall_x);
 	tex_x = wall_x * (double)texture_wall.w;
 	y = e->map.draw_start;
-	while (y < e->map.draw_end)
+	while (y++ < e->map.draw_end)
 	{
 		tex_y = (y - e->axes.axe_y / 2 + e->map.hauteur_line / 2) *
 			texture_wall.h / e->map.hauteur_line;
+		if (tex_y < 0)
+			return ;
 		e->mlx.get_data[x + y * (e->mlx.size_line / 4)] =
 			texture_wall.get_data[tex_x + tex_y * texture_wall.w];
-		y++;
 	}
 }

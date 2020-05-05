@@ -55,9 +55,9 @@ void	ft_open_window(t_env *e)
 	}
 	ft_textures(e);
 	ft_init_sprite(e);
-	ft_init_image(e);
 	ft_check_wall(e);
 	ft_check_space(e);
+	ft_init_image(e);
 	mlx_do_key_autorepeatoff(e->mlx.ptr);
 	mlx_hook(e->mlx.win_ptr, 2, 1, &ft_key_down, e);
 	mlx_hook(e->mlx.win_ptr, 3, 2, &ft_key_up, e);
@@ -88,6 +88,7 @@ int		ft_exit(t_env *e)
 		free(e->sprite);
 	if (e->map.buff)
 		free(e->map.buff);
+	ft_exit_free(e);
 	exit(0);
 	return (0);
 }
@@ -114,7 +115,8 @@ void	ft_push_bmp(t_env *e)
 	ft_raycasting(e);
 	ft_sprite(e);
 	ft_bmp(e);
-	ft_exit_before(e);
+	free(e->mlx.new_image);
+	ft_exit(e);
 }
 
 int		main(int argc, char **argv)
@@ -123,7 +125,7 @@ int		main(int argc, char **argv)
 	int		len;
 
 	ft_bzero(&e, sizeof(t_env));
-	if (argv[2] && !ft_strncmp(argv[2], "--save", 6) && argc < 4)
+	if (argv[2] && !ft_strcmp(argv[2], "--save") && argc < 4)
 	{
 		ft_read_map(argv, &e);
 		ft_push_bmp(&e);
@@ -131,14 +133,14 @@ int		main(int argc, char **argv)
 	if (argc < 2 || argc > 2)
 	{
 		ft_putstr("Error\nNumbers of argc incorrect");
-		ft_exit(&e);
+		ft_exit_before(&e);
 	}
 	len = (ft_strlen(argv[1]) - 4);
 	ft_read_map(argv, &e);
 	if (!argv[1] || (ft_strncmp(argv[1] + len, ".cub", 4)))
 	{
 		ft_putstr("Error\nNo map or no file .cub");
-		ft_exit(&e);
+		ft_exit_before(&e);
 	}
 	ft_check_malloc(&e);
 	ft_open_window(&e);

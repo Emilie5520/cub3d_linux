@@ -81,3 +81,20 @@ int		ft_key_up(int keycode, t_env *e)
 		ft_exit(e);
 	return (0);
 }
+
+void	ft_parsing_line_check(t_env *e, char *line)
+{
+	int		i;
+
+	i = 0;
+	if ((line[i] != 'R' && line[i] != ' ' && line[i] != '\n'
+	&& line[i] != '\0' && line[i] != 'C' && line[i] != 'F' &&
+	line[i] != 'S' && line[i] != '1' && (line[i] != 'N' &&
+	line[i + 1] != 'O') && (line[i] != 'S' && line[i + 1] != 'O')
+	&& (line[i] != 'W' && line[i + 1] != 'E')
+	&& (line[i] != 'E' && line[i + 1] != 'A')))
+	{
+		ft_putstr("Error\nWrong information in maps.cub\n");
+		ft_exit(e);
+	}
+}

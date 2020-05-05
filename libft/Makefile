@@ -58,6 +58,7 @@ SRCS = ft_memset.c \
        ft_swap.c \
        ft_strdel.c \
        ft_putstr.c \
+       ft_strcmp.c \
 
 BONUS = ft_lstadd_back.c \
 	ft_lstadd_front.c \

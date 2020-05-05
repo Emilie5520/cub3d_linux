@@ -262,5 +262,7 @@ void				ft_parsing_line_again(t_env *e, char *line, int i);
 char				*ft_delete_space_next(char *str);
 void				ft_check_malloc(t_env *e);
 int					ft_exit(t_env *e);
+void				ft_parsing_line_check(t_env *e, char *line);
+void				ft_exit_free(t_env *e);
 
 #endif

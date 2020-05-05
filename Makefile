@@ -20,13 +20,14 @@ SRC =  sources/main.c \
 	sources/ft_check_error.c \
 	sources/ft_utils_2.c \
 	sources/ft_utils_3.c \
+	sources/ft_utils_4.c \
 	sources/ft_sprite_2.c \
 
 OBJ = $(SRC:%.c=%.o)
 
 IFLAGS = ./includes/
 
-CFLAGS = -Wall -Wextra -Werror -lm -lbsd -lX11 -lXext
+CFLAGS = -Wall -Wextra -Werror -lm -lbsd -lX11 -lXext -g
 
 DIRMLX = ./mlx/
 

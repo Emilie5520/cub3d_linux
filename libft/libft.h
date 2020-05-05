@@ -6,7 +6,7 @@
 /*   By: edouvier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:18:14 by edouvier          #+#    #+#             */
-/*   Updated: 2020/04/11 09:25:14 by edouvier         ###   ########.fr       */
+/*   Updated: 2020/05/01 16:27:30 by edouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_strcmp(char *s1, char *s2);
 void				*ft_memset (void *str, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
